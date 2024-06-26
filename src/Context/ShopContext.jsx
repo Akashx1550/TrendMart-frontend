@@ -17,12 +17,12 @@ const ShopContextProvider = (props) =>{
     const[cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://trend-mart-backend.vercel.app/allproducts')
         .then((res)=> res.json())
         .then((data)=> setAll_product(data));
 
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/getcart', {
+            fetch('https://trend-mart-backend.vercel.app/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -44,7 +44,7 @@ const ShopContextProvider = (props) =>{
         })
         
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart', {
+            fetch('https://trend-mart-backend.vercel.app/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept : 'application/form-data',
@@ -65,7 +65,7 @@ const ShopContextProvider = (props) =>{
         })
 
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/removefromcart', {
+            fetch('https://trend-mart-backend.vercel.app/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept : 'application/form-data',
