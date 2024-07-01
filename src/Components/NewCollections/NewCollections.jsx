@@ -6,7 +6,11 @@ const NewCollections = () => {
     const [new_collection, setNew_collection] = useState([]);
 
     useEffect(() => {
-        fetch('https://trendmart-backend.onrender.com/newcollections')
+        fetch('https://trendmart-backend.onrender.com/newcollections', {
+          "method": "GET",
+          "Content-Type": "application/json",
+          "credentials": true,
+        })
             .then((res) => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
