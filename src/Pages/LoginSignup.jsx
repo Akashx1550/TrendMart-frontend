@@ -17,7 +17,7 @@ const LoginSignup = () => {
     console.log("Login function executed", formData);
 
     let responseData;
-    await fetch('https://trend-mart-backend.vercel.app/login', {
+    await fetch('https://trendmart-backend.onrender.com/login', {
       method: 'POST',
       headers: {
         Accept : 'application/form-data',

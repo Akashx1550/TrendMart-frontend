@@ -8,7 +8,7 @@ const RelatedProducts = ({category}) => {
     const [data_product, setDataProducts] = useState([]);
 
     useEffect(()=>{
-        fetch(`https://trend-mart-backend.vercel.app/relatedproducts/${category}`)
+        fetch(`https://trendmart-backend.onrender.com/relatedproducts/${category}`)
         .then((res)=> res.json())
         .then((data) => setDataProducts(data));
     },[])

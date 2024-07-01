@@ -6,7 +6,7 @@ const Popular = () => {
     const [popularProducts, setPopularProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://trend-mart-backend.vercel.app/popularinwomen')
+        fetch('https://trendmart-backend.onrender.com/popularinwomen')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
