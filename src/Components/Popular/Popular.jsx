@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import './Popular.css';
-import Item from '../Item/Item';
+import Spinner from '../Spinner/Spinner';
+
+const Item = lazy(() => import('../Item/Item'));
 
 const Popular = () => {
     const [popularProducts, setPopularProducts] = useState([]);
@@ -24,9 +26,18 @@ const Popular = () => {
             <h1>POPULAR IN WOMEN</h1>
             <hr />
             <div className="popular-item">
-                {popularProducts.map((item, i) => (
-                    <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} />
-                ))}
+                <Suspense fallback={<Spinner />}>
+                    {popularProducts.map((item, i) => (
+                        <Item
+                            key={i}
+                            id={item.id}
+                            name={item.name}
+                            image={item.image}
+                            new_price={item.new_price}
+                            old_price={item.old_price}
+                        />
+                    ))}
+                </Suspense>
             </div>
         </div>
     );

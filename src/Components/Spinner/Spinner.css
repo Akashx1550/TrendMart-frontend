@@ -1,0 +1,9 @@
+/* Spinner.css */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Or adjust height as needed */
+    font-size: 1.5rem;
+    color: #007bff; /* Match the primary color */
+}
